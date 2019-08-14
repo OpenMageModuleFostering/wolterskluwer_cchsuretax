@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * 
+ * @category     WoltersKluwer
+ * @package      WoltersKluwer_CchSureTax
+ * @copyright    Copyright (c) 2016, CCH Incorporated. All rights reserved
+ */
+-->
+<config>
+    <menu>
+        <suretax translate="title" module="suretax">
+            <title>SureTax</title>
+            <sort_order>1000</sort_order>
+            <children>
+                <suretax_config translate="title" module="suretax">
+                    <title>Global</title>
+                    <!-- This 'suretaxconfig should match admin tag in config and Controller class under controllers/adminhtml' -->
+                    <action>adminhtml/suretax_config</action>
+                    <sort_order>10</sort_order>
+                </suretax_config>
+                <suretax_websitestore translate="title" module="suretax">
+                    <title>Website/Store</title>
+                    <action>adminhtml/suretax_websitestore</action>
+                    <sort_order>20</sort_order>
+                </suretax_websitestore>
+                <suretax_customer translate="title" module="suretax">
+                    <title>Customers</title>
+                    <sort_order>40</sort_order>
+                    <action>adminhtml/suretax_customer</action>
+                </suretax_customer>
+                <suretax_customergroup translate="title" module="suretax">
+                    <title>Customer Groups</title>
+                    <sort_order>30</sort_order>
+                    <action>adminhtml/suretax_customergroup</action>
+                </suretax_customergroup>
+                <suretax_transactions translate="title" module="suretax">
+                    <title>Transactions</title>
+                    <sort_order>50</sort_order>
+                    <children>
+                        <suretax_invoices translate="title" module="suretax">
+                            <title>Invoices</title>
+                            <action>adminhtml/suretax_invoices</action>
+                        </suretax_invoices>
+                        <suretax_creditmemos translate="title" module="suretax">
+                            <title>Credit Memos</title>
+                            <action>adminhtml/suretax_creditmemos</action>
+                        </suretax_creditmemos>
+                    </children>
+                </suretax_transactions>
+                <suretax_help translate="title" module="suretax">
+                    <title>Help</title>
+                    <action>adminhtml/suretax_help</action>
+                    <sort_order>60</sort_order>
+                </suretax_help>
+            </children>           
+        </suretax>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <suretax translate="title" module="suretax">
+                        <title>SureTax</title>
+                        <sort_order>1000</sort_order>
+                        <children>
+                            <suretax_config translate="title">
+                                <title>Global</title>
+                                <sort_order>10</sort_order>
+                            </suretax_config>
+                            <suretax_websitestore translate="title">
+                                <title>Website/Store</title>
+                                <sort_order>20</sort_order>
+                            </suretax_websitestore>
+                            <suretax_customer translate='title'>
+                                <title>Customers</title>
+                                <sort_order>40</sort_order>
+                            </suretax_customer>
+                             <suretax_customergroup translate='title'>
+                                <title>Customer Groups</title>
+                                <sort_order>30</sort_order>
+                             </suretax_customergroup>
+                             
+                            <suretax_transactions translate="title">
+                                <title>Transactions</title>
+                                <sort_order>50</sort_order>
+                                <children>
+                                    <suretax_invoices translate="title">
+                                        <title>Invoices</title>
+                                        <sort_order>10</sort_order>
+                                    </suretax_invoices>
+                                    <suretax_creditmemos translate="title">
+                                        <title>Credit Memos</title>
+                                        <sort_order>20</sort_order>  
+                                    </suretax_creditmemos>
+                                </children>
+                            </suretax_transactions>
+                            <suretax_help translate="title">
+                                <title>Help</title>
+                                <sort_order>60</sort_order>
+                            </suretax_help>
+                        </children>
+                    </suretax>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

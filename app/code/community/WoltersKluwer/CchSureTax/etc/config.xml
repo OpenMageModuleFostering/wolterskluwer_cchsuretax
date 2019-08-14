@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @category     WoltersKluwer
+ * @package      WoltersKluwer_CchSureTax
+ * @copyright    Copyright (c) 2016, CCH Incorporated. All rights reserved
+ */
+-->
+<config>
+    <modules>
+        <WoltersKluwer_CchSureTax>
+            <version>1.0.3</version>
+        </WoltersKluwer_CchSureTax>     
+    </modules>
+    <global>
+        <events>
+            <sales_order_save_after>
+                <observers>
+                    <wolterskluwer_cchsuretax_save_after>
+                        <type>singleton</type>
+                        <class>WoltersKluwer_CchSureTax_Model_Observer</class>
+                        <method>afterOrderSaved</method>
+                    </wolterskluwer_cchsuretax_save_after>
+                </observers>
+            </sales_order_save_after>
+            <sales_order_invoice_save_after>
+                <observers>
+                    <wolterskluwer_cchsuretax_invoice_after>
+                        <type>singleton</type>
+                        <class>WoltersKluwer_CchSureTax_Model_Observer</class>
+                        <method>afterInvoiceSaved</method>
+                    </wolterskluwer_cchsuretax_invoice_after>
+                </observers>
+            </sales_order_invoice_save_after>
+            <sales_convert_quote_address_to_order>
+                <observers>
+                    <tax>
+                        <class>WoltersKluwer_CchSureTax_Model_Observer</class>
+                        <method>salesEventConvertQuoteAddressToOrder</method>
+                    </tax>
+                </observers>
+            </sales_convert_quote_address_to_order>
+            <sales_order_creditmemo_save_after>
+                <observers>
+                    <wolterskluwer_cchsuretax_creditmemo_refund>
+                        <type>singleton</type>
+                        <class>WoltersKluwer_CchSureTax_Model_Observer</class>
+                        <method>afterCreditMemoRefund</method>
+                    </wolterskluwer_cchsuretax_creditmemo_refund>
+                </observers>
+            </sales_order_creditmemo_save_after>
+        </events>
+        <models>
+            <wolterskluwer_cchsuretax>
+                <class>WoltersKluwer_CchSureTax_Model</class>
+                <resourceModel>wolterskluwer_cchsuretax_resource</resourceModel>
+            </wolterskluwer_cchsuretax>
+            <wolterskluwer_cchsuretax_resource>
+                <class>WoltersKluwer_CchSureTax_Model_Resource</class>
+                <entities>
+                    
+                    <suretaxaddress>
+                        <class>WoltersKluwer_CchSureTax_Ws_SureTaxAddress</class>
+                    </suretaxaddress>
+                    <suretaxclient>
+                        <class>WoltersKluwer_CchSureTax_Ws_SureTaxClient</class>
+                    </suretaxclient>
+                    <suretaxitem>
+                        <class>WoltersKluwer_CchSureTax_Ws_SureTaxItem</class>
+                    </suretaxitem>
+                    <suretaxrequest>
+                        <class>WoltersKluwer_CchSureTax_Ws_SureTaxRequest</class>
+                    </suretaxrequest>
+                    <taxadjustmentitem>
+                        <class>WoltersKluwer_CchSureTax_Ws_TaxAdjustmentItem</class>
+                    </taxadjustmentitem>
+                    <taxadjustmentrequest>
+                        <class>WoltersKluwer_CchSureTax_Ws_TaxAdjustmentRequest</class>
+                    </taxadjustmentrequest>
+                    
+                        
+                    <info>
+                        <table>wolterskluwer_cchsuretax_info</table>
+                    </info>                  
+                    <info_registrant>
+                        <table>wolterskluwer_cchsuretax_info_registrant</table>
+                    </info_registrant>
+                    <websitestore_config>
+                        <table>wolterskluwer_cchsuretax_websitestore_config</table>
+                    </websitestore_config>
+                    <order>
+                        <table>wolterskluwer_cchsuretax_order</table>
+                    </order>
+                    <order_registrant>
+                        <table>wolterskluwer_cchsuretax_order_registrant</table>
+                    </order_registrant>
+                    <invoice>
+                        <table>wolterskluwer_cchsuretax_invoice</table>
+                    </invoice>
+                    <creditmemo>
+                        <table>wolterskluwer_cchsuretax_creditmemo</table>
+                    </creditmemo>
+                    <customergroup>
+                        <table>wolterskluwer_cchsuretax_customergroup</table>
+                    </customergroup>
+                    <customergroup_registrant>
+                        <table>wolterskluwer_cchsuretax_customergroup_registrant</table>
+                    </customergroup_registrant>
+                    <customer>
+                        <table>wolterskluwer_cchsuretax_customer</table>
+                    </customer>
+                    <customer_registrant>
+                        <table>wolterskluwer_cchsuretax_customer_registrant</table>
+                    </customer_registrant>
+                </entities>
+            </wolterskluwer_cchsuretax_resource>
+
+            <tax>
+                <rewrite>
+                    <sales_total_quote_tax>WoltersKluwer_CchSureTax_Model_Tax_Sales_Total_Quote_Tax</sales_total_quote_tax>
+                </rewrite>
+            </tax> 
+            <enterprise_giftwrapping>
+                <rewrite>
+                    <total_quote_tax_giftwrapping>WoltersKluwer_CchSureTax_Model_Tax_Sales_Total_Quote_Giftwrap</total_quote_tax_giftwrapping>
+                </rewrite>
+            </enterprise_giftwrapping>
+              <core_customer_collection>
+                <rewrite>
+                    <resource_customer_collection>WoltersKluwer_CchSureTax_Model_Resource_Corecustomer_Collection</resource_customer_collection>
+                </rewrite>
+            </core_customer_collection>
+        </models>
+        <resources>
+            <suretax_setup>
+                <setup>
+                    <module>WoltersKluwer_CchSureTax</module>
+                    <class>WoltersKluwer_CchSureTax_Model_Resource_Setup</class>
+                </setup>
+            </suretax_setup>
+        </resources>
+        <blocks>
+            <suretax>
+                <class>WoltersKluwer_CchSureTax_Block</class>
+            </suretax>
+
+        </blocks>
+        <helpers>
+            <suretax>
+                <class>WoltersKluwer_CchSureTax_Helper</class>
+            </suretax>
+        </helpers>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <use>admin</use>
+                <args>
+                    <modules>
+   
+                        <suretax before="Mage_Adminhtml">WoltersKluwer_CchSureTax_Adminhtml</suretax>
+                        <!-- This 'suretaxconfig' tag should match action tag in adminhtml.xml and Controller class under controllers/adminhtml' -->
+                        <WoltersKluwer_CchSureTax_Adminhtml before="Mage_Adminhtml">WoltersKluwer_CchSureTax_Adminhtml</WoltersKluwer_CchSureTax_Adminhtml>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <suretax>
+                    <file>cchsuretax.xml</file>
+                </suretax>
+            </updates>
+        </layout>
+    </adminhtml>
+    <frontend>
+        <routers>
+            <suretax>
+                <use>standard</use>
+                <args>
+                    <module>WoltersKluwer_CchSureTax</module>
+                    <frontName>suretax</frontName>
+                </args>
+            </suretax>
+        </routers>
+    </frontend>
+</config>

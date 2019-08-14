@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * WoltersKluwer_CchSureTax
+ *
+ * NOTICE OF LICENSE:
+ * http://www.suretax.com/resources/ecommerce/extension/license
+ * 
+ * @category     WoltersKluwer
+ * @package      WoltersKluwer_CchSureTax
+ * @copyright    Copyright (c) 2016, CCH Incorporated. All rights reserved
+ */
+-->
+<layout>    
+    <!--<default>
+        <reference name="content">
+            <block type="suretax/adminhtml_suretaxconfig_edit" name="suretax.config" />
+        </reference>
+        <reference name="left">
+            <block type="suretax/adminhtml_suretaxconfig_edit_tabs" name="suretax.config.tabs" />
+        </reference>    
+    </default>-->
+    <adminhtml_suretax_config_index>
+        <reference name="content">
+            <block type="suretax/adminhtml_suretaxconfig_edit" name="suretax.config" />
+        </reference>
+        <reference name="left">
+            <block type="suretax/adminhtml_suretaxconfig_edit_tabs" name="suretax.config.tabs" />
+        </reference>
+    </adminhtml_suretax_config_index>
+    
+    <adminhtml_suretax_websitestore_index>
+        <reference name="content">
+            <block type="suretax/adminhtml_websitestore_container" name="suretax.websitestore" />
+        </reference>
+    </adminhtml_suretax_websitestore_index>
+    
+    <adminhtml_suretax_websitestore_edit>
+        <reference name="content">
+            <block type="suretax/adminhtml_websitestore_container_edit" name="suretax.websitestore.edit" />
+        </reference>
+    </adminhtml_suretax_websitestore_edit>
+    
+    <adminhtml_suretax_invoices_index>
+        <reference name="content">
+            <block type="suretax/adminhtml_invoices_container" name="suretax.invoices" />
+        </reference>
+    </adminhtml_suretax_invoices_index>
+    
+    <adminhtml_suretax_creditmemos_index>
+        <reference name="content">
+            <block type="suretax/adminhtml_creditmemos_container" name="suretax.creditmemos" />
+        </reference>
+    </adminhtml_suretax_creditmemos_index>
+    
+    <adminhtml_suretax_customer_index>
+        <reference name="content">
+            <block type="suretax/adminhtml_customer_container" name="suretax.customer" />
+        </reference>
+    </adminhtml_suretax_customer_index>
+    
+    <adminhtml_suretax_customer_edit>
+        <reference name="content">
+            <block type="suretax/adminhtml_customer_container_edit" name="suretax.customer.edit" />
+        </reference>
+    </adminhtml_suretax_customer_edit>
+    
+    <adminhtml_suretax_customer_selectcustomer>
+        <reference name="content">
+            <block type="suretax/adminhtml_customer_container_select_container" name="suretax.customer.selectcustomer" />
+        </reference>
+    </adminhtml_suretax_customer_selectcustomer>
+    
+    <adminhtml_suretax_customergroup_index>
+        <reference name="content">
+            <block type="suretax/adminhtml_customergroup_container" name="suretax.customergroup" />
+        </reference>
+    </adminhtml_suretax_customergroup_index>
+    
+    <adminhtml_suretax_customergroup_edit>
+        <reference name="content">
+            <block type="suretax/adminhtml_customergroup_container_edit" name="suretax.customergroup.edit" />
+        </reference>
+    </adminhtml_suretax_customergroup_edit>
+    
+    <adminhtml_suretax_customergroup_select>
+        <reference name="content">
+            <block type="suretax/adminhtml_customergroup_container_select_container" name="suretax.customergroup.select" />
+        </reference>
+    </adminhtml_suretax_customergroup_select>
+    
+    <adminhtml_suretax_help_index>
+        <reference name="content">
+            <block type="suretax/adminhtml_help_container" name="suretax.help" />
+        </reference>
+    </adminhtml_suretax_help_index>
+    
+</layout>

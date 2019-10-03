@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 The CCH SureTax connector for Magento allows users to accurately calculate real-time sales tax.
